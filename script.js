@@ -2,32 +2,54 @@ let carItems = {
   Tomatos: 0,
   Cucumber: 0,
   Carrot: 0,
+  Avocado: 0,
+  Banana: 0,
+  mango: 0,
   "Total Price": 0,
 };
 
-function showItems(index) {
+function showItems(index, price) {
   let current = "p" + (index + 1);
+  let amount = "h" + index;
   let priceIndex = Object.keys(carItems).length - 1;
   let totalPriceLocation = "p" + (priceIndex + 1);
 
   var elementExists = document.getElementById(current);
 
+  document.getElementById(amount).innerHTML =
+    "Amount: " + Object.values(carItems)[index];
+
   //Update New Object
-  document.getElementById("p4").innerHTML =
-    Object.keys(carItems)[priceIndex] +
-    ":" +
-    Object.values(carItems)[priceIndex];
+  document.getElementById("priceP").innerHTML =
+    Object.values(carItems)[priceIndex] + "$";
 
   if (elementExists) {
     document.getElementById(current).innerHTML =
-      Object.keys(carItems)[index] + ":" + Object.values(carItems)[index] + " ";
+      Object.keys(carItems)[index] +
+      ":" +
+      Object.values(carItems)[index] +
+      " x " +
+      price +
+      " = " +
+      Object.values(carItems)[index] * price +
+      "$" +
+      " ";
   } else {
     //Add New object
     var tag = document.createElement(current);
     tag.setAttribute("id", current);
+    tag.setAttribute("style", "font-size:20px");
 
     var text = document.createTextNode(
-      Object.keys(carItems)[index] + ":" + Object.values(carItems)[index] + " "
+      Object.keys(carItems)[index] +
+        ":" +
+        Object.values(carItems)[index] +
+        " x " +
+        price +
+        " = " +
+        Object.values(carItems)[index] * price +
+        "$" +
+        " "
     );
     tag.appendChild(text);
     var element = document.getElementById("showAll");
@@ -55,7 +77,7 @@ function addItem(index, price) {
     });
   }
   checkIfdisableRemoveBtn(index);
-  showItems(index);
+  showItems(index, price);
 }
 
 //delete value from carItem
@@ -74,12 +96,10 @@ function removeItem(index, price, removeAll) {
     });
   }
   checkIfdisableRemoveBtn(index);
-  showItems(index);
+  showItems(index, price);
 }
 
 function checkIfdisableRemoveBtn(index) {
-  "btn0-0";
-  "btn0-1";
   let disableBtn1 = "btn" + index + "-" + index;
   let disableBtn2 = "btn" + index + "-" + (index + 1);
   if (Object.values(carItems)[index] === 0) {

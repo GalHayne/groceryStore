@@ -26,71 +26,29 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://www.instagram.com/dudufaruk/?hl=en"
-              target="_blank"
-              >my instagram</a
-            >
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled Button</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-lg test-btn mr-1" type="submit">Search</button>
-        </form>
-      </div>
     </nav>
 
     <!-- Header -->
 
     <!--body-->
 
-    <div style="text-align: center; padding: 0.5%" id="new">
-      <p>Your cart:</p>
-      <img style="height: 50px" src="carts.png" alt="carts" />
-      <p id="p4"></p>
-      <div id="showAll"></div>
+    <div class="test">
+      <div class="new" id="new">
+        <p style="font-size: 35px">Your cart:</p>
+        <img style="height: 50px" src="carts.png" alt="carts" />
+        <div id="showAll">
+          <p style="font-size: 30px">Total Price</p>
+          <p style="font-size: 32px" id="priceP">0$</p>
+        </div>
+      </div>
     </div>
+
+    <!-- <p style="text-align: center; font-size: 50px">tefsdgdsg</p> -->
 
     <div class="d-md-inline-flex p-2">
       <div class="card">
         <img
+          style="height: 60%"
           src="a-tomato-gd93159914_640.jpg"
           class="card-img-top"
           alt="Fissure in Sandstone"
@@ -114,12 +72,13 @@
           >
             remove all
           </button>
+          <h5 id="h0">Amount:0</h5>
         </div>
       </div>
 
       <div class="card">
         <img
-          style="height: 74.3%"
+          style="height: 60%"
           src="cucumbers-g07d171c04_640.jpg"
           class="card-img-top"
           alt="Fissure in Sandstone"
@@ -143,12 +102,13 @@
           >
             remove all
           </button>
+          <h5 id="h1">Amount:0</h5>
         </div>
       </div>
 
       <div class="card">
         <img
-          style="height: 74.3%"
+          style="height: 60%"
           src="carrots-gdaac0bb0d_640.jpg"
           class="card-img-top"
           alt="Fissure in Sandstone"
@@ -172,6 +132,99 @@
           >
             remove all
           </button>
+          <h5 id="h2">Amount:0</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-md-inline-flex p-2">
+      <div class="card">
+        <img
+          style="height: 60%"
+          src="avocados-g28cf328e6_640.jpg"
+          class="card-img-top"
+          alt="Fissure in Sandstone"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Avocado 8$</h5>
+          <button class="button-9" onclick="addItem(3,8)">buy</button>
+          <button
+            class="button-10"
+            disabled
+            id="btn3-3"
+            onclick="removeItem(3,8,0)"
+          >
+            remove
+          </button>
+          <button
+            class="button-10"
+            disabled
+            id="btn3-4"
+            onclick="removeItem(3,8,1)"
+          >
+            remove all
+          </button>
+          <h5 id="h3">Amount:0</h5>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          style="height: 60%"
+          src="banana-g5d5dc17f5_640.jpg"
+          class="card-img-top"
+          alt="Fissure in Sandstone"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Banana 6$</h5>
+          <button class="button-9" onclick="addItem(4,6)">buy</button>
+          <button
+            class="button-10"
+            disabled
+            id="btn4-4"
+            onclick="removeItem(4,6,0)"
+          >
+            remove
+          </button>
+          <button
+            class="button-10"
+            disabled
+            id="btn4-5"
+            onclick="removeItem(4,6,1)"
+          >
+            remove all
+          </button>
+          <h5 id="h4">Amount:0</h5>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          style="height: 60%"
+          src="food-gce1cca3f1_640.jpg"
+          class="card-img-top"
+          alt="Fissure in Sandstone"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Mango 11$</h5>
+          <button class="button-9" onclick="addItem(5,11)">buy</button>
+          <button
+            class="button-10"
+            disabled
+            id="btn5-5"
+            onclick="removeItem(5,11,0)"
+          >
+            remove
+          </button>
+          <button
+            class="button-10"
+            disabled
+            id="btn5-6"
+            onclick="removeItem(5,11,1)"
+          >
+            remove all
+          </button>
+          <h5 id="h5">Amount:0</h5>
         </div>
       </div>
     </div>
