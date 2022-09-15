@@ -1,54 +1,340 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <title>Shopping Cart Demo</title>
-    <style>
-      .productName,
-      .productPrice {
-        padding-right: 20px;
-      }
-      .productPrice {
-        font-weight: bolder;
-        color: purple;
-      }
-    </style>
   </head>
   <body>
+    <!-- Header -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Gal - Web With bootstrap </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.instagram.com/dudufaruk/?hl=en"
+              target="_blank"
+              >my instagram</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled Button</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-lg test-btn mr-1" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Header -->
+
+    <!--body-->
     <div id="new">
       <p id="p4"></p>
       <div id="showAll"></div>
     </div>
-    <div id="products">
-      <div>
-        <h3>Tomato</h3>
-        <h3>3$</h3>
+
+    <div class="d-md-inline-flex p-2">
+      <div class="card">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
+          class="card-img-top"
+          alt="Fissure in Sandstone"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Tomato 3$</h5>
+          <button class="button-9" onclick="addItem(0,3)">buy</button>
+          <button
+            class="button-10"
+            disabled
+            id="btn0-0"
+            onclick="removeItem(0,3,0)"
+          >
+            remove
+          </button>
+          <button
+            class="button-10"
+            disabled
+            id="btn0-1"
+            onclick="removeItem(0,3,1)"
+          >
+            remove all
+          </button>
+        </div>
       </div>
-      <div>
-        <button onclick="addItem(0,3)">buy</button>
-        <button disabled id="btn0-0" onclick="removeItem(0,3,0)">remove</button>
-        <button disabled id="btn0-1" onclick="removeItem(0,3,1)">
-          remove all
-        </button>
+
+      <div class="card">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
+          class="card-img-top"
+          alt="Fissure in Sandstone"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Cucumber 5$</h5>
+          <button class="button-9" onclick="addItem(1,5)">buy</button>
+          <button
+            class="button-10"
+            disabled
+            id="btn1-1"
+            onclick="removeItem(1,5,0)"
+          >
+            remove
+          </button>
+          <button
+            class="button-10"
+            disabled
+            id="btn1-2"
+            onclick="removeItem(1,5,1)"
+          >
+            remove all
+          </button>
+        </div>
       </div>
-      <h3>Cucumber</h3>
-      <h3>5$</h3>
-      <div>
-        <button onclick="addItem(1,5)">buy</button>
-        <button disabled id="btn1-1" onclick="removeItem(1,5,0)">remove</button>
-        <button disabled id="btn1-2" onclick="removeItem(1,5,1)">
-          remove all
-        </button>
-      </div>
-      <div>
-        <h3>Carrot</h3>
-        <h3>1$</h3>
-        <button onclick="addItem(2,1)">buy</button>
-        <button disabled id="btn2-2" onclick="removeItem(2,1,0)">remove</button>
-        <button disabled id="btn2-3" onclick="removeItem(2,1,1)">
-          remove all
-        </button>
+
+      <div class="card">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
+          class="card-img-top"
+          alt="Fissure in Sandstone"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Carrot 1$</h5>
+          <button class="button-9" onclick="addItem(2,1)">buy</button>
+          <button
+            class="button-10"
+            disabled
+            id="btn2-2"
+            onclick="removeItem(2,1,0)"
+          >
+            remove
+          </button>
+          <button
+            class="button-10"
+            disabled
+            id="btn2-3"
+            onclick="removeItem(2,1,1)"
+          >
+            remove all
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- body -->
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+      <!-- Section: Social media -->
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block connected">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a
+            href="https://www.facebook.com/1stephane.le.gar"
+            target="_blank"
+            class="me-4 text-reset"
+          >
+            <i class="fab fa-facebook-f"
+              ><img
+                class="gal-facebook"
+                src="icons8-facebook-64.png"
+                alt="facebook"
+            /></i>
+          </a>
+          <a
+            href="https://twitter.com/dudufaruk_?lang=en"
+            class="me-4 text-reset"
+          >
+            <i class="fab fa-twitter">
+              <img src="icons8-twitter-50.png" alt="twitter" />
+            </i>
+          </a>
+          <a
+            href="https://www.google.com/search?q=dudu+faruk&client=firefox-b-d&biw=2144&bih=1066&sxsrf=ALiCzsZs0l_7SETsihbOyXXmoEeqjx1x_w%3A1662108526392&ei=bsMRY__KF5aSxc8PyomnoAE&ved=0ahUKEwj_uazi3PX5AhUWSfEDHcrECRQQ4dUDCA0&uact=5&oq=dudu+faruk&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBQguEJECMgUIABDLATIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQHhAWMgYIABAeEBY6CggAEB4QogQQsAM6CAgAEKIEELADSgQIQRgBSgQIRhgAULwCWN8FYKUHaAJwAHgAgAHgAYgBlwOSAQUwLjEuMZgBAKABAcgBA8ABAQ&sclient=gws-wiz"
+            class="me-4 text-reset"
+          >
+            <i class="fab fa-google">
+              <img
+                class="contactImg"
+                src="icons8-google-50.png"
+                alt="fa-google"
+              />
+            </i>
+          </a>
+          <a
+            href="https://www.instagram.com/dudufaruk/?hl=en"
+            class="me-4 text-reset"
+          >
+            <i class="fab fa-instagram">
+              <img src="icons8-instagram-64.png" alt="instagram" />
+            </i>
+          </a>
+          <a
+            href="https://il.linkedin.com/in/aksecurity"
+            class="me-4 text-reset"
+          >
+            <i class="fab fa-linkedin">
+              <img src="icons8-linkedin-50.png" alt="linkdin" />
+            </i>
+          </a>
+          <a href="https://github.com/GalHayne" class="me-4 text-reset">
+            <i class="fab fa-github">
+              <img src="icons8-github-64.png" alt="github" />
+            </i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>Hayne Web Design
+              </h6>
+              <p>
+                Here you can use rows and columns to organize your footer
+                content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+              <p>
+                <a href="#!" class="text-reset">Angular</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">React</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">c++</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">c#</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+              <p>
+                <a href="#!" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Help</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p>
+                <i class="fas fa-home me-3"></i> Israel, IL 5789413, NESS ZIONA
+              </p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                GalHayne@Gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +972 545875037</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2022 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+          >Gal Hayne</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
