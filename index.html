@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Cart Demo</title>
+    <style>
+      .productName,
+      .productPrice {
+        padding-right: 20px;
+      }
+      .productPrice {
+        font-weight: bolder;
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="new">
+      <p id="p4"></p>
+      <div id="showAll"></div>
+    </div>
+    <div id="products">
+      <div>
+        <h3>Tomato</h3>
+        <h3>3$</h3>
+      </div>
+      <div>
+        <button onclick="addItem(0,3)">buy</button>
+        <button disabled id="btn0-0" onclick="removeItem(0,3,0)">remove</button>
+        <button disabled id="btn0-1" onclick="removeItem(0,3,1)">
+          remove all
+        </button>
+      </div>
+      <h3>Cucumber</h3>
+      <h3>5$</h3>
+      <div>
+        <button onclick="addItem(1,5)">buy</button>
+        <button disabled id="btn1-1" onclick="removeItem(1,5,0)">remove</button>
+        <button disabled id="btn1-2" onclick="removeItem(1,5,1)">
+          remove all
+        </button>
+      </div>
+      <div>
+        <h3>Carrot</h3>
+        <h3>1$</h3>
+        <button onclick="addItem(2,1)">buy</button>
+        <button disabled id="btn2-2" onclick="removeItem(2,1,0)">remove</button>
+        <button disabled id="btn2-3" onclick="removeItem(2,1,1)">
+          remove all
+        </button>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
