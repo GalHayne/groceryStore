@@ -28,7 +28,6 @@ function showItems(index, price) {
       Object.keys(carItems)[index] +
       ":" +
       Object.values(carItems)[index] +
-      " x " +
       price +
       " = " +
       Object.values(carItems)[index] * price +
@@ -38,7 +37,7 @@ function showItems(index, price) {
     //Add New object
     var tag = document.createElement(current);
     tag.setAttribute("id", current);
-    tag.setAttribute("style", "font-size:20px");
+    tag.setAttribute("style", "font-size:23px");
 
     var text = document.createTextNode(
       Object.keys(carItems)[index] +
