@@ -28,6 +28,7 @@ function showItems(index, price) {
       Object.keys(carItems)[index] +
       ":" +
       Object.values(carItems)[index] +
+      " x " +
       price +
       " = " +
       Object.values(carItems)[index] * price +
@@ -52,6 +53,7 @@ function showItems(index, price) {
     );
     tag.appendChild(text);
     var element = document.getElementById("showAll");
+
     element.appendChild(tag);
   }
 

@@ -106,3 +106,13 @@
   margin-top: 0.5%;
   margin-left: 44%;
 }
+
+.removeProduct {
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-size: 15px;
+  margin: 10px;
+  cursor: pointer;
+}
